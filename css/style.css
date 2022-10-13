@@ -2,16 +2,16 @@
 /* It should also start with an opacity of 0 and end with an opacity of 1. */
 @keyframes logoAnimation {
 	from {width: 25px;}
-    to {width: 475px;}
-    from {opacity: 0;}
-    to {opacity: 1;}
+	to {width: 475px;}
+	from {opacity: 0;}
+	to {opacity: 1;}
 }
 
 /* The animation should take 5 seconds and only happen when the page is loaded. */
 #logo {
-    width: 475px;
-    animation-duration: 5s;
-    animation-name: logoAnimation;
+	width: 475px;
+	animation-duration: 5s;
+	animation-name: logoAnimation;
 }
 
 /* Edit the body element to use the Poppins font (using Google fonts) with serif as a backup. */
