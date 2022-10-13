@@ -1,0 +1,127 @@
+@keyframes logoAnimation {
+	from {width: 25px;}
+    to {width: 475px;}
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#logo {
+    animation-duration: 5s;
+    animation-name: logoAnimation;
+}
+
+body {
+	font-family: 'Poppins', serif;
+	background: url(../images/concrete_seamless.png);
+	background-color: #f1f1f1;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+ .nav_links {
+	display: flex;
+	flex-direction: column;
+ }
+
+ .nav_links li a:visited {
+	color: #0000ff;
+ }
+
+ .card > header {
+	background: #288088;
+	border: solid 2px #45ADAD;
+	padding: 20px 0 20px 0;
+	border-radius: 50px 50px 0 0;
+ }
+
+ .card {
+	border-radius: 50px 50px 0 0;
+	flex-basis: 450px;
+ }
+
+ .pricing {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+ }
+
+ .gallery img {
+	border: solid 10px #50C7C7;
+	margin: 10px;
+	width: 300px;
+ }
+
+ .gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+ }
+
+
+ /* media query for screens greater than 900px */
+ @media screen and (min-width: 900px) {
+	header, .nav_links {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+	.pricing, .card {
+		flex-basis: 275px;
+	}
+
+	body > header {
+		position: sticky;
+		top: 0;
+	}
+ }
+
+ /* media query for reduced motion  */
+ @media screen and (prefers-reduced-motion: reduce) {
+	#logo {
+		animation: 0s;
+	}
+ }
+
+ /* media query for page printed in portrait mode */
+ @media print {
+	body {
+		font-family: Arial, Helvetica;
+		background-image: none;
+ 	}
+
+	nav {
+		width: 100%;
+	}
+
+	.nav_links {
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.pricing {
+		display: flex;
+		align-items: flex-end;
+		flex-wrap: nowrap;
+	}
+
+	.card {
+		border: solid 2px #45ADDD;
+		flex-basis: 325px;
+	}
+
+	#gallery, .gallery {
+		display: none;
+	}
+
+	.pricing li:nth-child(2)::after {
+        content: "👍";
+    }
+}
