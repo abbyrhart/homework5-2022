@@ -1,3 +1,5 @@
+/* Animate the logo with keyframes. It should start at a width of 25px and grow to 475px. */
+/* It should also start with an opacity of 0 and end with an opacity of 1. */
 @keyframes logoAnimation {
 	from {width: 25px;}
     to {width: 475px;}
@@ -5,32 +7,40 @@
     to {opacity: 1;}
 }
 
+/* The animation should take 5 seconds and only happen when the page is loaded. */
 #logo {
     animation-duration: 5s;
     animation-name: logoAnimation;
 }
 
+/* Edit the body element to use the Poppins font (using Google fonts) with serif as a backup. */
+/* It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1. */
 body {
 	font-family: 'Poppins', serif;
 	background: url(../images/concrete_seamless.png);
 	background-color: #f1f1f1;
 }
 
+/* Edit the css for the header tag (all instances) to use flex to match our example. */
 header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
+/* Edit the css for the nav_links class to use flex to match our example. */
  .nav_links {
 	display: flex;
 	flex-direction: column;
  }
 
+/* challenge problem to keep all links the same color even when clicked on already */
  .nav_links li a:visited {
 	color: #0000ff;
  }
 
+/* Identify the proper selector to style ONLY those header elements that are direct children of a card class */
+/* used required styling from spec */
  .card > header {
 	background: #288088;
 	border: solid 2px #45ADAD;
@@ -38,11 +48,14 @@ header {
 	border-radius: 50px 50px 0 0;
  }
 
+/* Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px. */
+/* used "second property" to fix border radius */
  .card {
 	border-radius: 50px 50px 0 0;
 	flex-basis: 450px;
  }
 
+/* Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically. */
  .pricing {
 	display: flex;
 	flex-direction: row;
@@ -51,12 +64,16 @@ header {
 	justify-content: center;
  }
 
+/* Style the images in the gallery class. */
+/* These elements will have a solid 10px border with a color of #50C7C7, 10px margin on all four sides and a width of 300px. */
  .gallery img {
 	border: solid 10px #50C7C7;
 	margin: 10px;
 	width: 300px;
  }
 
+/* Edit the css for the gallery class to use flex to match our example */
+/* used flex wrap based on the photos in order to have it wrapped, centered the content */
  .gallery {
 	display: flex;
 	flex-wrap: wrap;
@@ -66,6 +83,8 @@ header {
 
  /* media query for screens greater than 900px */
  @media screen and (min-width: 900px) {
+/* Edit the css for the header tag (all instances) and the nav_links class to match our example using flex-properties. */
+/* used flex properties */
 	header, .nav_links {
 		display: flex;
 		align-items: center;
@@ -73,10 +92,14 @@ header {
 		justify-content: space-between;
 	}
 	
+/* Edit the css for the pricing and card classes to match our example. */
 	.pricing, .card {
 		flex-basis: 275px;
 	}
 
+/* Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. */
+/* Make sure that it is always visible. */
+/* used video as reference, used sticky to keep it at the top position specified */
 	body > header {
 		position: sticky;
 		top: 0;
@@ -85,6 +108,7 @@ header {
 
  /* media query for reduced motion  */
  @media screen and (prefers-reduced-motion: reduce) {
+/* there should be no animation for reduced motion */
 	#logo {
 		animation: 0s;
 	}
@@ -92,11 +116,14 @@ header {
 
  /* media query for page printed in portrait mode */
  @media print {
+/* Change the font on your body to Arial with a backup value of  Helvetica */
+/* the background image should be removed */
 	body {
 		font-family: Arial, Helvetica;
 		background-image: none;
  	}
 
+/* Edit the nav/nav_links elements so that they are spaced according to the image above. */
 	nav {
 		width: 100%;
 	}
@@ -106,21 +133,25 @@ header {
 		justify-content: space-around;
 	}
 
+/* Edit the pricing class so that the elements align along the bottom. */
 	.pricing {
 		display: flex;
 		align-items: flex-end;
 		flex-wrap: nowrap;
 	}
 
+/* The card elements should have a solid border 2px of #45ADDD and use flex-basis of 325px. */
 	.card {
 		border: solid 2px #45ADDD;
 		flex-basis: 325px;
 	}
 
+/* No part of the gallery should be visible */
 	#gallery, .gallery {
 		display: none;
 	}
 
+/* challenge to add thumbs-up */
 	.pricing li:nth-child(2)::after {
         content: "👍";
     }
